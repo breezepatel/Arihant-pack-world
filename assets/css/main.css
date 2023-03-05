@@ -366,15 +366,34 @@ section {
   background-color: var(--color-primary);
 }
 
-.header h1{
-  color:#3E54AC
+.header h1 {
+  color: #3E54AC;
+  display: block;
 }
+
 /* .header p{
   color:#3E54AC
 } */
-.header.Cname{
+.header.Cname {
   display: inline;
 }
+
+@media only screen and (max-width: 768px) {
+ 
+  .header.Cname {
+    display: inline;
+  }
+  .header h1 {
+    margin-top: 10px;
+    font-size: larger;
+    display: block;
+  }
+  .header p{
+    font-size: small;
+  }
+}
+
+
 
 .header.sticked {
   position: fixed;
@@ -390,32 +409,19 @@ section {
   margin-right: 6px;
 }
 
-.header .logo h1 {
-  font-size: 30px;
-  margin: 0;
-  font-weight: 600;
-  letter-spacing: 0.8px;
-  color: #fff;
-  font-family: var(--font-primary);
-}
-
-.header .logo h1 span {
-  color: #FF731D;
-}
-
 .sticked-header-offset {
-  margin-top: 70px;
+  margin-top: 80px;
 }
 
 section {
-  scroll-margin-top: 70px;
+  scroll-margin-top: 80px;
 }
 
 /*--------------------------------------------------------------
 # Desktop Navigation
 --------------------------------------------------------------*/
-@media (min-width: 1280px) {
- 
+@media only screen and (min-width: 1025px) {
+
 
   .navbar ul {
     margin: 0;
@@ -507,6 +513,7 @@ section {
 /*--------------------------------------------------------------
 # Mobile Navigation
 --------------------------------------------------------------*/
+
 @media (max-width: 1279px) {
   .navbar {
     position: fixed;
@@ -517,6 +524,7 @@ section {
     bottom: 0;
     transition: 0.3s;
     z-index: 9997;
+    background-color: whitesmoke;
   }
 
   .navbar a,
@@ -544,26 +552,12 @@ section {
   .navbar .active,
   .navbar .active:focus,
   .navbar li:hover>a {
-    color: #fff;
+    color: #f33b3b;
   }
 
-  .navbar .getstarted,
-  .navbar .getstarted:focus {
-    background: var(--color-primary);
-    padding: 8px 20px;
-    border-radius: 4px;
-    margin: 15px;
-    color: #fff;
-  }
-
-  .navbar .getstarted:hover,
-  .navbar .getstarted:focus:hover {
-    color: #fff;
-    background: rgba(20, 191, 171, 0.8);
-  }
 
   .mobile-nav-show {
-    color: rgba(255, 255, 255, 0.6);
+    color: #252424;
     font-size: 28px;
     cursor: pointer;
     line-height: 0;
@@ -573,7 +567,7 @@ section {
   }
 
   .mobile-nav-hide {
-    color: #fff;
+    color: #252424;
     font-size: 32px;
     cursor: pointer;
     line-height: 0;
@@ -592,13 +586,6 @@ section {
     right: 0;
   }
 
-  .mobile-nav-active .navbar:before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    /* background: rgba(0, 106, 93, 0.8); */
-    z-index: 9996;
-  }
 }
 
 /*--------------------------------------------------------------
@@ -657,103 +644,6 @@ section {
 
 .about .content p:last-child {
   margin-bottom: 0;
-}
-
-.about .play-btn {
-  width: 94px;
-  height: 94px;
-  background: radial-gradient(var(--color-primary) 50%, rgba(0, 131, 116, 0.4) 52%);
-  border-radius: 50%;
-  display: block;
-  position: absolute;
-  left: calc(50% - 47px);
-  top: calc(50% - 47px);
-  overflow: hidden;
-}
-
-.about .play-btn:before {
-  content: "";
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  -webkit-animation-delay: 0s;
-  animation-delay: 0s;
-  -webkit-animation: pulsate-btn 2s;
-  animation: pulsate-btn 2s;
-  -webkit-animation-direction: forwards;
-  animation-direction: forwards;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-timing-function: steps;
-  animation-timing-function: steps;
-  opacity: 1;
-  border-radius: 50%;
-  border: 5px solid rgba(0, 131, 116, 0.7);
-  top: -15%;
-  left: -15%;
-  background: rgba(198, 16, 0, 0);
-}
-
-.about .play-btn:after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid #fff;
-  z-index: 100;
-  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.about .play-btn:hover:before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  width: 0;
-  height: 0;
-  border: none;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid #fff;
-  z-index: 200;
-  -webkit-animation: none;
-  animation: none;
-  border-radius: 0;
-}
-
-.about .play-btn:hover:after {
-  border-left: 15px solid var(--color-primary);
-  transform: scale(20);
-}
-
-@-webkit-keyframes pulsate-btn {
-  0% {
-    transform: scale(0.6, 0.6);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1, 1);
-    opacity: 0;
-  }
-}
-
-@keyframes pulsate-btn {
-  0% {
-    transform: scale(0.6, 0.6);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1, 1);
-    opacity: 0;
-  }
 }
 
 /*--------------------------------------------------------------
@@ -1119,7 +1009,8 @@ section {
   /* background-image: url("https://www.paperbagsindia.in/assets/images/banner-2.jpg"); */
   /* background-image: "assets/img/products/bg-2.jpgsts"; */
   /* background-image: url("https://img1.wsimg.com/isteam/stock/22796/:/rs=w:1300,h:375,cg:true,m/cr=w:1300,h:375"); */
-  background-image: linear-gradient(to right bottom, #d7dde7, #c6c9d1, #b5b6bb, #a3a3a6, #919191);}
+  background-image: linear-gradient(to right bottom, #d7dde7, #c6c9d1, #b5b6bb, #a3a3a6, #919191);
+}
 
 .hero {
   width: 100%;
@@ -1386,7 +1277,8 @@ Mid: #none defined
   .product-image {
     margin-top: 10px;
     margin-bottom: 10px;
-    width: 40%;
+    height: 200px;
+    width: 150px;
     display: block;
     margin-left: auto;
     margin-right: auto;
