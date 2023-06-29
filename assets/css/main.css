@@ -847,7 +847,7 @@ section {
 .contact .info-item {
   width: 100%;
   height: 50%;
-  background-color: #5BC0F8;
+  background-color: #3e62e5;
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 10px;
@@ -1166,6 +1166,11 @@ Mid: #none defined
 }
 
 /* Containers */
+/* need to add this mobile version form */
+/* .product-bg{
+  max-height: 760px;
+  padding-bottom: 80px;
+} */
 
 .product {
   max-width: 80%;
@@ -1264,10 +1269,14 @@ Mid: #none defined
 
 @media only screen and (max-width: 768px) {
 
+  .product-bg{
+    max-height: 760px;
+    padding-bottom: 80px;
+  }
   /* Styles for devices with a maximum width of 768px */
   .product {
     display: block;
-    background-color: #b4c3eb;
+ background-color: #c8ccd5;
   }
 
   .product-price {
